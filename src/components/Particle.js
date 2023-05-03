@@ -19,11 +19,17 @@ function Particle() {
             opacity: 0.03,
           },
           move: {
-            direction: "right",
-            speed: 0.05,
+            direction: "none",
+            speed: 0.1,
+            out_mode: "bounce",
+            attract: {
+              enable: true,
+              rotateX: 600,
+              rotateY: 1200,
+            },
           },
           size: {
-            value: 1,
+            value: 2,
           },
           opacity: {
             anim: {

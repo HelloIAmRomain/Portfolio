@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import useDarkMode from './useDarkMode';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -16,9 +18,17 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 
+
+
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+
+  const [darkMode, setDarkMode] = useDarkMode();
+    const toggleDarkMode = () => {
+      setDarkMode(!darkMode);
+    };
+
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -94,9 +104,12 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
+                disabled
+                href="https://capsules-videos.com/blog"
                 target="_blank"
                 rel="noreferrer"
+                title="in construction"
+                style={{ cursor: "not-allowed", opacity: "0.5" }}
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
               </Nav.Link>
@@ -104,7 +117,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://github.com/HelloIAmRomain/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >
@@ -112,6 +125,21 @@ function NavBar() {
                 <AiFillStar style={{ fontSize: "1.1em" }} />
               </Button>
             </Nav.Item>
+
+            <Nav.Item className="nav-item-switch ml-3">
+              <Form.Check
+                type="switch"
+                id="dark-mode-switch"
+                label={darkMode ? "Dark Mode" : "Light Mode"}
+                checked={darkMode}
+                onChange={toggleDarkMode}
+                className="mt-1"
+              />
+            </Nav.Item>
+
+
+
+
           </Nav>
         </Navbar.Collapse>
       </Container>
