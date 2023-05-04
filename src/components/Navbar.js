@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import useDarkMode from './useDarkMode';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -23,6 +25,8 @@ import { CgFileDocument } from "react-icons/cg";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [isTop, setIsTop] = useState(true);
+  const [logoSize, setLogoSize] = useState(150); // set initial logo size
 
   const [darkMode, setDarkMode] = useDarkMode();
     const toggleDarkMode = () => {
@@ -31,14 +35,26 @@ function NavBar() {
 
 
   function scrollHandler() {
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 30) {
       updateNavbar(true);
+      setIsTop(false);
+      setLogoSize(60); // set logo size to smaller value
     } else {
       updateNavbar(false);
+      setIsTop(true);
+      setLogoSize(150); // set logo size to original value
     }
-  }
+  };
+
+  useEffect(() => {
+      window.addEventListener("scroll", scrollHandler);
+      return () => window.removeEventListener("scroll", scrollHandler);
+    }, []); // add/remove event listener on component mount/unmount
 
   window.addEventListener("scroll", scrollHandler);
+
+  const containerClass = navColour ? "page-content sticky" : "page-content";
+
 
   return (
     <Navbar
@@ -49,7 +65,16 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+          <img
+              src={logo}
+              className="img-fluid logo"
+              alt="brand"
+              style={{
+                width: `${logoSize}px`,
+                height: `${logoSize}px`,
+                transition: "width 0.3s, height 0.3s", // add transition property
+              }}
+            />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -62,7 +87,7 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ms-auto nav-container" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -103,16 +128,28 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                disabled
-                href="https://capsules-videos.com/blog"
-                target="_blank"
-                rel="noreferrer"
-                title="in construction"
-                style={{ cursor: "not-allowed", opacity: "0.5" }}
+              <OverlayTrigger
+              placement="bottom"
+                overlay={
+                  <Tooltip id="tooltip-disabled">Under construction</Tooltip>
+                }
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
+                <span
+                  className="d-inline-block"
+                  onClick={() => updateExpanded(false)}
+                >
+                  <Nav.Link
+                    disabled
+                    href="https://capsules-videos.com/blog"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="in construction"
+                    style={{ cursor: "not-allowed", opacity: "0.5" }}
+                  >
+                    <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                  </Nav.Link>
+                </span>
+              </OverlayTrigger>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
@@ -127,15 +164,19 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item className="nav-item-switch ml-3">
-              <Form.Check
-                type="switch"
-                id="dark-mode-switch"
-                label={darkMode ? "Dark Mode" : "Light Mode"}
-                checked={darkMode}
-                onChange={toggleDarkMode}
-                className="mt-1"
-              />
+              <div className="toggle-container">
+                <Form.Check
+                  type="switch"
+                  id="dark-mode-switch"
+                  label={<span className="switch-label">{darkMode ? "Dark Mode" : "Light Mode"}</span>}
+                  checked={darkMode}
+                  onChange={toggleDarkMode}
+                  className="mt-1"
+                />
+              </div>
             </Nav.Item>
+
+
 
 
 
