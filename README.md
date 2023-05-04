@@ -1,8 +1,5 @@
 # Welcome
 
-This code comes from a clone of the original repository. The original repository is located at <a href="https://github.com/soumyajit4419/Portfolio">soumyajit4419/Portfolio</a>.
-
-
 ## 🛠 Installation and Setup Instructions
 
 1. Installation: `npm install`
@@ -21,3 +18,6 @@ You will find all the components used and you can edit your information accordin
 ## Author
 
 Romain Dodet
+
+
+This code comes from a clone of the original repository. The original repository is located at <a href="https://github.com/soumyajit4419/Portfolio">soumyajit4419/Portfolio</a>.
