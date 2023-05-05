@@ -12,9 +12,9 @@ The page will reload if you make edits.
 
 To run the file in a production mode, you will prefer using Dockerfile.
 
-## Author
+## 🙋‍♂️ Author
 
-Romain Dodet
+[Romain Dodet](https://linkedin.com/in/romain-dodet)
 
 
 This code comes from a clone of the original repository. The original repository is located at <a href="https://github.com/soumyajit4419/Portfolio">soumyajit4419/Portfolio</a>.
