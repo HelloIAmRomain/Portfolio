@@ -11,5 +11,5 @@ body {
 
 /* Dark theme */
 body.dark {
-    background-image: var(--background-gradient);
-  }
+  background-image: var(--background-gradient);
+}

@@ -168,7 +168,7 @@ function NavBar() {
                 <Form.Check
                   type="switch"
                   id="dark-mode-switch"
-                  label={<span className="switch-label">{darkMode ? "Dark Mode" : "Light Mode"}</span>}
+                  label={<span className="switch-label">{darkMode ? "🌙" : "☀️"}</span>}
                   checked={darkMode}
                   onChange={toggleDarkMode}
                   className="mt-1"

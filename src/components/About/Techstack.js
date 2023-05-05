@@ -2,8 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiJavascript1, DiReact, DiMongodb, DiGit } from "react-icons/di";
-import { SiHtml5, SiCss3, SiDocker, SiTensorflow, SiApacheSpark, SiPowerbi, SiRlang } from "react-icons/si";
-import { RlangIcon, SparkIcon } from './CustomIcons';
+import { SiHtml5, SiCss3, SiDocker, SiTensorflow, SiApachespark, SiPowerbi} from "react-icons/si";
 
 function Techstack() {
   return (
@@ -37,14 +36,10 @@ function Techstack() {
       </Col>
 
       <Col xs={4} md={2} className="tech-icons">
-        <RlangIcon />
-      </Col>
+          <SiApachespark />
+        </Col>
+      </Row>
 
-      <Col xs={4} md={2} className="tech-icons">
-      <SparkIcon />
-    </Col>
-
-    </Row>
   );
 }
 
