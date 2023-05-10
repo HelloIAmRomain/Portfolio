@@ -26,6 +26,7 @@ function Home2() {
                     <b className="highlight"> Artificial Intelligence</b>
                 </i>.
                 <br />
+                <br />
                 My favorite language?
                 <i>
                     <b className="highlight"> Python</b> 🐍
@@ -51,6 +52,10 @@ function Home2() {
                 However, my approach to learning has always been straightforward - dive in and learn along the way when facing challenges 🌊🤿.
                 Otherwise, I would probably never have started the project if I tried to learn all prior.
                 So that's what I did. I read, I practiced, I failed, and I learned.. 👨‍💻
+
+                <br />
+                <br />
+
                 This website development comes along my personal learning of web development 🌱
 
                 <br />
