@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
@@ -23,9 +24,9 @@ function Footer() {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
+                className="icon-color"
                 href="https://github.com/HelloIAmRomain"
-                style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillGithub />
@@ -33,9 +34,9 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
+                className="icon-color"
                 href="https://twitter.com/HelloIAmRomain"
-                style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiOutlineTwitter />
@@ -43,9 +44,9 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
+                className="icon-color"
                 href="https://linkedin.com/in/romain-dodet/"
-                style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedinIn />

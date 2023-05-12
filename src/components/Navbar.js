@@ -24,7 +24,7 @@ import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [navcolor, updateNavbar] = useState(false);
   const [isTop, setIsTop] = useState(true);
   const [logoSize, setLogoSize] = useState(150); // set initial logo size
 
@@ -53,7 +53,7 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
-  const containerClass = navColour ? "page-content sticky" : "page-content";
+  const containerClass = navcolor ? "page-content sticky" : "page-content";
 
 
   return (
@@ -61,7 +61,7 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={navcolor ? "sticky" : "navbar"}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
