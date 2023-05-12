@@ -5,7 +5,7 @@ const lightColors = {
   '--primary-color': '#5533AA',
   '--secondary-color': '#2D1950',
   '--lighter-color': '#3D93C2',
-  '--accent-color': 'pink',
+  '--accent-color': 'rgba(240, 98, 146, 0.9)',
   '--link-color': '#5533AA',
   '--text-color': '#333333',
   '--imp-text-color': '#684D4F',
@@ -13,13 +13,14 @@ const lightColors = {
   '--background-gradient': 'linear-gradient(to bottom left, #E0D5F0, #C0D0E0)',
   '--section-background-color': 'linear-gradient(to bottom left, #3D93C2, #3D8CB1, #3A80A1, #367492)',
   '--border-color': '#CCCCCC',
-  '--button-bg-color': '#4078c0',
-  '--button-hover-bg-color': '#E0E0E0',
+  '--button-bg-color': '#a77ac8',
+  '--button-hover-bg-color': '#8C7BBF',
   '--scrollbar-color': 'RGBA(255,180,180, 0.9)',
   '--scrollbar-hover-color': 'RGBA(210,150,150, 0.9)',
   '--shadow-color': 'rgba(80, 60, 100, 0.2)',
   '--navbar-color': 'rgba(27, 26, 46, 0.6)',
   '--loading-color': '#6F4BD8',
+  '--gold-color' : 'gold',
 };
 
 
@@ -37,13 +38,14 @@ const darkColors = {
   '--background-gradient': 'linear-gradient(to left, rgb(27, 20, 41), rgb(20, 35, 110)',
   '--section-background-color': 'linear-gradient(to bottom left, rgba(50, 16, 160, 0.582), rgba(10, 58, 124, 0.904))',
   '--border-color': '#444444',
-  '--button-bg-color': '#6e5494',
-  '--button-hover-bg-color': '#4078c0',
+  '--button-bg-color': '#523c71',
+  '--button-hover-bg-color': '#58297E',
   '--scrollbar-color': 'RGBA(140,70,130,0.9)',
   '--scrollbar-hover-color': 'RGBA(170,80,160, 0.9)',
   '--shadow-color': 'rgba(10, 5, 30, 0.2)',
   '--navbar-color': '#1b1a2ea9',
   '--loading-color': '#37306B',
+  '--gold-color' : 'gold',
 };
 
 

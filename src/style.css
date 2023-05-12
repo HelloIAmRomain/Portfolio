@@ -461,8 +461,12 @@ button:focus {
   padding-left: 15px;
 }
 
-.icon-colour {
-  color: var(--primary-color) !important;
+.icon-color {
+  color: var(--text-color) !important;
+}
+
+.home-icon-color {
+  color: var(--lighter-color) !important;
 }
 
 
@@ -586,14 +590,16 @@ button:focus {
 
 .btn-primary {
   color: #fff !important;
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  position: relative;
+  z-index: 1000;
   }
 
   .btn-primary:hover {
-    color: var(--primary-color) !important;
-    background-color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
+    color: var(--gold-color) !important;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
   }
 
   .btn:focus {

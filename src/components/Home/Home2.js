@@ -120,7 +120,7 @@ function Home2() {
                   href="https://github.com/HelloIAmRomain/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-icon-color  home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -130,7 +130,7 @@ function Home2() {
                   href="https://twitter.com/HelloIAmRomain"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-icon-color  home-social-icons"
                 >
                   <AiOutlineTwitter />
                 </a>
@@ -140,7 +140,7 @@ function Home2() {
                   href="https://linkedin.com/in/romain-dodet/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-icon-color  home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
