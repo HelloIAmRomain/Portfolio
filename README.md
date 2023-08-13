@@ -36,3 +36,6 @@ I am Romain Dodet, a passionated of technology
 
 This code comes from a clone of the original repository. The original repository is located
 <a href="https://github.com/soumyajit4419/Portfolio">here</a>.
+
+
+<img src="./Images/readme-img.png">

@@ -18,7 +18,7 @@ const lightColors = {
   '--scrollbar-color': 'RGBA(255,180,180, 0.9)',
   '--scrollbar-hover-color': 'RGBA(210,150,150, 0.9)',
   '--shadow-color': 'rgba(80, 60, 100, 0.2)',
-  '--navbar-color': 'rgba(27, 26, 46, 0.6)',
+  '--navbar-color': 'rgba(27, 26, 46, 0.8)',
   '--loading-color': '#6F4BD8',
   '--gold-color' : 'gold',
 };
@@ -43,7 +43,7 @@ const darkColors = {
   '--scrollbar-color': 'RGBA(140,70,130,0.9)',
   '--scrollbar-hover-color': 'RGBA(170,80,160, 0.9)',
   '--shadow-color': 'rgba(10, 5, 30, 0.2)',
-  '--navbar-color': '#1b1a2ea9',
+  '--navbar-color': '#121325bb',
   '--loading-color': '#37306B',
   '--gold-color' : 'gold',
 };
