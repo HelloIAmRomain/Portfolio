@@ -237,13 +237,12 @@ button:focus {
   width: 100%;
 }
 
+
+
 .nav-item-switch {
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  padding: 1rem;
 }
+
 
 .nav-container {
   display: flex;
@@ -252,10 +251,6 @@ button:focus {
 
 .switch-label {
   display: inline-block;
-  min-width: 90px;
-  text-align: left;
-  white-space: nowrap;
-  vertical-align: middle;
 }
 
 .toggle-container {
@@ -872,18 +867,3 @@ button:focus {
   display: none !important;
 }
 
-.nav-item-switch {
-  display: flex;
-  align-items: center;
-  margin-left: 2rem;
-}
-
-.nav-item-switch .custom-switch {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.nav-item-switch .custom-switch .custom-control-label {
-  margin-bottom: 0;
-}
