@@ -61,7 +61,7 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navcolor ? "sticky" : "navbar"}
+      className={navcolor ? "sticky navbar-scrolled" : "navbar"}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
@@ -128,28 +128,13 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <OverlayTrigger
-              placement="bottom"
-                overlay={
-                  <Tooltip id="tooltip-disabled">Under construction</Tooltip>
-                }
+              <Nav.Link
+                as={Link}
+                to="/blogs"
+                onClick={() => updateExpanded(false)}
               >
-                <span
-                  className="d-inline-block"
-                  onClick={() => updateExpanded(false)}
-                >
-                  <Nav.Link
-                    disabled
-                    href="https://capsules-videos.com/blog"
-                    target="_blank"
-                    rel="noreferrer"
-                    title="in construction"
-                    style={{ cursor: "not-allowed", opacity: "0.5" }}
-                  >
-                    <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-                  </Nav.Link>
-                </span>
-              </OverlayTrigger>
+                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
@@ -175,11 +160,6 @@ function NavBar() {
                 />
               </div>
             </Nav.Item>
-
-
-
-
-
 
           </Nav>
         </Navbar.Collapse>
