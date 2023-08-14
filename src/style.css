@@ -69,6 +69,47 @@ button:focus {
   height: 100vh;
 }
 
+
+/* --------- */
+/* Go to top   */
+/* --------- */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0; /* Initial opacity value */
+  transition: opacity 0.3s ease-in-out; /* Transition effect for opacity */
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+}
+
+
+.scroll-to-top-button {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--bg-color);
+  cursor: pointer;
+  font-size: 24px;
+  width: 40px; /* Set the width and height to be the same to create a circle */
+  height: 40px;
+  line-height: 40px; /* Center the content vertically */
+  text-align: center; /* Center the content horizontally */
+  border-radius: 50%;
+  display: flex; /* Use flex to center content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.scroll-to-top-button:hover {
+  background-color: var(--link-color);
+}
+
+
+
 /* --------- */
 /*Scrollbar   */
 /* --------- */
@@ -173,6 +214,14 @@ button:focus {
     display: none !important;
   }
 }
+
+@media screen and (max-width: 768px) { /* Adjust the breakpoint according to your needs */
+  .navbar-scrolled {
+    background: #000; /* Your desired background color */
+    transition: background 0.3s; /* Optional transition effect */
+  }
+}
+
 .navbar-brand {
   color: green !important;
 }
@@ -240,7 +289,8 @@ button:focus {
 
 
 .nav-item-switch {
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 
@@ -846,6 +896,8 @@ button:focus {
   display: flex;
   align-items: center;
   margin-left: 1rem;
+  margin-top:1rem;
+  margin-bottom: 1rem;
 }
 
 .fork-btn-inner {
@@ -865,5 +917,71 @@ button:focus {
 
 .fork-btn-inner::after {
   display: none !important;
+}
+
+
+/* --------- */
+/* Blogs */
+/* --------- */
+
+
+.blogs-section {
+  position: relative !important;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  color: white !important;
+}
+
+.project-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-card {
+  perspective: 1000px;
+  margin: 15px !important;
+}
+
+.blog-card-inner {
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background with low opacity */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.blog-card:hover .blog-card-inner {
+  transform: rotateY(180deg);
+}
+
+.blog-card-front,
+.blog-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.blog-card img {
+  width: 80%;
+  height: auto;
+}
+
+.blog-card-back {
+  padding: 10px;
+  transform: rotateY(180deg);
+}
+
+.blog-card:hover {
+  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
 }
 

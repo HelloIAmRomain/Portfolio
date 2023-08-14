@@ -7,6 +7,10 @@ import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import ContentContainer from "./components/ContentContainer";
 import Resume from "./components/Resume/ResumeNew";
+import Blogs from "./components/Blogs/Blogs";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+
+
 import {
   BrowserRouter as Router,
   Route,
@@ -35,12 +39,14 @@ function App() {
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <ScrollToTop />
+        <ScrollToTopButton />
         <ContentContainer>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/blogs" element={<Blogs />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </ContentContainer>
