@@ -383,8 +383,32 @@ button:focus {
 }
 
 .heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
+  font-size: 2.4em;
+  padding-left: 50px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-size: 2.4em;
+  font-weight: 500;
+}
+
+.title-background {
+  background: rgba(255, 255, 255, 0.2); 
+  padding-top: 20px; /* Padding around the title */
+  padding-bottom: 1px;
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center align the text */
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.section {
+  position: relative;
+  padding: 150px 0 30px;
+  color: white;
 }
 
 .heading-name {
@@ -561,115 +585,76 @@ button:focus {
 /* --------- */
 /* Projects */
 /* --------- */
-.project-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-}
 
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
-}
-
-.project-card-view {
-  box-shadow: 0 4px 5px 3px var(--shadow-color) !important;
-  color: var(--text-color) !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
-}
-.project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px var(--shadow-color) !important;
-}
-
-.blog-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
-}
-
-.blog-card-view {
-  background-color: transparent !important;
-  box-shadow: 0 3px 3px 2px var(--shadow-color) !important;
-  color: var(--text-color) !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
-}
-
-.blog-link {
-  color: var(--link-color) !important;
-  text-decoration: none !important;
-}
-
-.blog-link:hover {
-  cursor: pointer !important;
-}
-
-.blog-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px var(--shadow-color) !important;
-}
-
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
-}
-
-.blog-img {
-  padding: 0px !important;
-  opacity: 0.8 !important;
-  border-radius: 0px !important;
-}
-
-.btn-primary {
-  color: #fff !important;
-  background-color: var(--accent-color) !important;
-  border-color: var(--accent-color) !important;
+  perspective: 1500px;
   position: relative;
-  z-index: 1000;
-  }
+  width: 100%;
+  height: 0;
+  padding-top: 100%; /* This ensures a square aspect ratio */
+  margin: 15px 0; 
+  transition: all 0.4s ease 0s;
+}
 
-  .btn-primary:hover {
-    color: var(--gold-color) !important;
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-  }
+.project-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 4px 5px 4px 3px var(--shadow-color);
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
 
-  .btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
+.project-card:hover .project-inner {
+  transform: rotateY(180deg);
+}
 
-  .project-heading {
-    color: var(--text-color) !important;
-    font-size: 2.3em !important;
-    font-weight: 500 !important;
-    padding-top: 10px !important;
-  }
+.project-front, .project-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+
+.project-front {
+  background: var(--section-background-color); /* Add a semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-back {
+  background: var(--bg-color); /* Darker background for readability */
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-front img {
+  max-width: 90%;
+  max-height: 70%;
+  margin: 10px;
+}
+
+.project-back p {
+  color: var(--text-color);
+  padding: 15px;
+  text-align: center;
+}
+  
 
 /* --------- */
 /* About */
 /* --------- */
-
-.about-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
 
 .tech-icons {
   font-size: 4.5em !important;
@@ -924,22 +909,46 @@ button:focus {
 /* Blogs */
 /* --------- */
 
+.blog-card {
+  padding: 50px 25px;
+  height: auto;
+  margin: 15px;
+  perspective: 1000px;
+}
+
+.blog-card-view {
+  background-color: transparent;
+  box-shadow: 0 3px 3px 2px var(--shadow-color);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+.blog-card-view:hover {
+  transform: scale(1.02);
+  overflow: hidden;
+  box-shadow: 0 3px 3px 5px var(--shadow-color);
+}
+
+.blog-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.blog-link:hover {
+  cursor: pointer;
+}
+
+.blog-img {
+  padding: 0;
+  opacity: 0.8;
+  border-radius: 0;
+}
 
 .blogs-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  color: white !important;
-}
-
-.project-heading {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.blog-card {
-  perspective: 1000px;
-  margin: 15px !important;
+  position: relative;
+  padding: 150px 0 30px;
+  color: white;
 }
 
 .blog-card-inner {
@@ -949,12 +958,16 @@ button:focus {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  background: rgba(255, 255, 255, 0.2); /* Transparent background with low opacity */
-  border-radius: 10px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 
 .blog-card:hover .blog-card-inner {
   transform: rotateY(180deg);
+}
+
+.blog-card:hover {
+  border: 2.2px solid rgba(197, 115, 230, 0.883);
 }
 
 .blog-card-front,
@@ -980,8 +993,3 @@ button:focus {
   padding: 10px;
   transform: rotateY(180deg);
 }
-
-.blog-card:hover {
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
-}
-

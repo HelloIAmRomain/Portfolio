@@ -9,9 +9,11 @@ function Blogs() {
     <Container fluid className="blogs-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My <strong className="highlight">Blogs</strong>
-        </h1>
+        <div className="title-background">
+          <h1 className="section-heading">
+            My <strong className="highlight">Blogs</strong>
+          </h1>
+        </div>
         <Row style={{ justifyContent: 'center', padding: '10px' }}>
           {/* Example of a single blog card */}
           <Col md={4} className="blog-card">

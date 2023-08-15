@@ -1,54 +1,38 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-//import leaf from "../../Assets/Projects/leaf.png";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Particle from '../Particle';
+import ProjectCard from './ProjectCard';
+import projectImage1 from '../../Assets/project1.png';
+import projectImage2 from '../../Assets/project2.png';
+
 
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="highlight">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
+        <div className="title-background">
+          <h1 className="section-heading">
+            My <strong className="highlight">Projects</strong>
+          </h1>
+        </div>
 
-        <Row style={{ justifyContent: "center", paddingBottom: "10px", marginTop: "4rem" }}>
-
-        <h2 md={5} className="h2">🚧 In Construction 🚧</h2>
-
-        <h3>This page will be updated <strong className="highlight">SOON</strong></h3>
-
-
-          {/* <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="/Chatify"
-              demoLink="https:///"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://"
-              demoLink="https://blogs.soumya-jit.tech/"
-            />
-          </Col>
-          */}
-
-
-
+        <Row style={{ justifyContent: 'center', padding: '10px' }}>
+            <Col md={4}>
+                <ProjectCard 
+                title="Project 1" 
+                imgSrc={projectImage1}
+                description="Description for Project 1" 
+                />
+            </Col>
+            <Col md={4}>
+                <ProjectCard 
+                title="Project 2" 
+                imgSrc={projectImage2} 
+                description="Description for Project 2"
+                />
+            </Col>
         </Row>
       </Container>
     </Container>
