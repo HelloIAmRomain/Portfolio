@@ -37,11 +37,21 @@ p {
 }
 
 .highlight {
-  color: var(--imp-text-color) !important;
+  color: var(--imp-text-color);
+}
+
+.shadow-text {
+  text-shadow: 1px 1px 2px var(--shadow-color);
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 button:focus {
   box-shadow: none !important;
+}
+
+.rounded-img {
+  border-radius: 10px;
 }
 
 /* --------- */

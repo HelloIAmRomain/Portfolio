@@ -2,10 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Particle from '../Particle';
 import ProjectCard from './ProjectCard';
-import projectImage1 from '../../Assets/project1.png';
-import projectImage2 from '../../Assets/project2.png';
-
-
+import clairifyImage from '../../Assets/clairify.png';
 
 function Projects() {
   return (
@@ -19,20 +16,14 @@ function Projects() {
         </div>
 
         <Row style={{ justifyContent: 'center', padding: '10px' }}>
-            <Col md={4}>
-                <ProjectCard 
-                title="Project 1" 
-                imgSrc={projectImage1}
-                description="Description for Project 1" 
-                />
-            </Col>
-            <Col md={4}>
-                <ProjectCard 
-                title="Project 2" 
-                imgSrc={projectImage2} 
-                description="Description for Project 2"
-                />
-            </Col>
+          <Col md={4}>
+            <ProjectCard 
+            title="Clairify" 
+            imgSrc={clairifyImage}
+            description="Clairify is a FastAPI project that analyzes your text and provides various insights including sentiment with score, summary, and keyword extraction. (Disclaimer: takes a long time to process because it runs on a Raspberry Pi)"
+            link="http://clairify.freeboxos.fr:17143/"
+            />
+          </Col>
         </Row>
       </Container>
     </Container>
