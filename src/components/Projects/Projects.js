@@ -21,7 +21,7 @@ function Projects() {
             title="Clairify" 
             imgSrc={clairifyImage}
             description="Clairify is a FastAPI project that analyzes your text and provides various insights including sentiment with score, summary, and keyword extraction. (Disclaimer: takes a long time to process because it runs on a Raspberry Pi)"
-            link="http://clairify.freeboxos.fr:17143/"
+            link="http://clairify.romain-dodet.com:17143/"
             />
           </Col>
         </Row>
